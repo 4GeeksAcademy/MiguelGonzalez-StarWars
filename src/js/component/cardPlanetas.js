@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 
-export const CardPersonaje = (props) => {
+export const CardPlanetas = (props) => {
   const { store, actions } = useContext(Context);
 
   const isFavorite = store.favorites.includes(props.name);
@@ -16,8 +16,8 @@ export const CardPersonaje = (props) => {
       <img src={StarWars} className="card-img-top" alt="..." />
       <div className="card-body">
         <h5 className="card-title text-white">{props.name}</h5>
-        <p className="card-text text-white">Hair Color: {props.hair_color}</p>
-        <p className="card-text text-white">Gender: {props.gender}</p>
+        <p className="card-text text-white">Population: {props.population}</p>
+        <p className="card-text text-white">Gravity: {props.gravity}</p>
         <div style={{ marginBottom: "10px" }}>
           <button
             onClick={() => actions.favoriteCheck(props.name)}
@@ -34,7 +34,7 @@ export const CardPersonaje = (props) => {
           </button>
         </div>
         <div>
-          <Link to={`/single/${props.id}`}>
+          <Link to={`/singlePlanet/${props.id}`}>
             <button className="btn btn-secondary">Detailed View</button>
           </Link>
         </div>
